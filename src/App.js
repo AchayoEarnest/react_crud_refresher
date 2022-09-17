@@ -1,3 +1,4 @@
+import React from 'react';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import './App.css';
 import Create from './components/Create';
@@ -7,15 +8,18 @@ import Delete from './components/Delete'
 
 function App() {
   return (
-    <Router>
-      Nav Sect
+    <div className='main'>
+      <Router>
+       <h3>React Crud Operation</h3>
       <Routes>
-        <Route exact path='/create' component = { <Create /> } />
-        <Route exact path='/read' component={ <Read /> } />
-        <Route path='/update' component={ <Update /> } />
-        <Route path='/delete' component={ <Delete /> } />        
+        <Route exact path='/create' element={<Create />} />
+        <Route exact path='/read' element={<Read />} />
+        <Route path='/update' element={<Update />} />
+        <Route path='/delete' element={<Delete />} />        
       </Routes>
     </Router>
+    </div>
+    
   );
 }
 
